@@ -4,7 +4,7 @@ camel:
   health:
     enabled: true
   springboot:
-    name: ServicesRest
+    name: EAI
 management:
   server:
     port: 8081
@@ -13,3 +13,4 @@ management:
   endpoint:
     health:
       enabled: true
+      
