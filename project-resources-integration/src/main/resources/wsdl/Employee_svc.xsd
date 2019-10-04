@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:tns="http://webservice.resourcelinkservice.northgatearinso.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://webservice.resourcelinkservice.northgatearinso.com" version="1.0">
+
+    <!--Employee-->
+    <xs:element name="employeeNotifications" type="tns:employeeNotifications"/>
+
+    <xs:complexType name="employeeNotifications">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="employeeNotifications" nillable="true" type="tns:employeeNotification"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="employeeNotification">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="messageId" type="xs:string"/>
+            <xs:element minOccurs="0" name="emailAddress" type="xs:string"/>
+            <xs:element minOccurs="0" name="before" type="tns:employeeXmlNode"/>
+            <xs:element name="after" type="tns:employeeXmlNode"/>
+        </xs:sequence>
+        <xs:attribute name="changeType" type="tns:changeType"/>
+    </xs:complexType>
+
+    <xs:complexType name="employeeXmlNode">
+        <xs:sequence>
+            <xs:element name="employee" type="tns:employee"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="employee">
+        <xs:sequence>
+            <xs:element name="controlGroupNumber" nillable="true" type="xs:string"/>
+            <xs:element name="currentStartDate" nillable="true" type="xs:dateTime"/>
+            <xs:element name="currentStartReason" nillable="true" type="xs:string"/>
+            <xs:element name="employeeNumber" nillable="true" type="xs:string"/>
+            <xs:element name="endDate" nillable="true" type="xs:dateTime"/>
+            <xs:element name="leavingReason" nillable="true" type="xs:string"/>
+            <xs:element name="legislationType" nillable="true" type="xs:string"/>
+            <xs:element name="noticePeriod" nillable="true" type="xs:string"/>
+            <xs:element name="originalStartDate" nillable="true" type="xs:dateTime"/>
+            <xs:element name="originalStartReason" nillable="true" type="xs:string"/>
+            <xs:element name="payGroupNumber" nillable="true" type="xs:string"/>
+            <xs:element name="payMethod" nillable="true" type="xs:string"/>
+            <xs:element name="payType" nillable="true" type="xs:string"/>
+            <xs:element name="person" nillable="true" type="tns:person"/>
+            <xs:element name="probationDate" nillable="true" type="xs:dateTime"/>
+            <xs:element name="suspendedFlag" nillable="true" type="xs:string"/>
+            <xs:element name="toStaffDate" nillable="true" type="xs:dateTime"/>
+            <xs:element name="eLearningStartDate" nillable="true" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="person">
+        <xs:sequence>
+            <xs:element name="birthDate" nillable="true" type="xs:string"/>
+            <xs:element name="deceasedDate" nillable="true" type="xs:dateTime"/>
+            <xs:element name="employeeNumber" nillable="true" type="xs:string"/>
+            <xs:element name="firstForename" nillable="true" type="xs:string"/>
+            <xs:element name="gender" nillable="true" type="xs:string"/>
+            <xs:element name="generation" nillable="true" type="xs:string"/>
+            <xs:element name="initials" nillable="true" type="xs:string"/>
+            <xs:element name="knownAs" nillable="true" type="xs:string"/>
+            <xs:element name="NINumber" nillable="true" type="xs:string"/>
+            <xs:element name="otherForenames" nillable="true" type="xs:string"/>
+            <xs:element name="previousSurname" nillable="true" type="xs:string"/>
+            <xs:element name="surname" nillable="true" type="xs:string"/>
+            <xs:element name="title" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <!--Post Holding-->
+    <xs:element name="postHoldingNotifications" type="tns:postHoldingNotifications"/>
+
+    <xs:complexType name="postHoldingNotifications">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="postHoldingNotifications" nillable="true" type="tns:postHoldingNotification"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="postHoldingNotification">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="messageId" type="xs:string"/>
+            <xs:element minOccurs="0" name="before" nillable="true" type="tns:postHoldingXmlNode"/>
+            <xs:element name="after" type="tns:postHoldingXmlNode"/>
+        </xs:sequence>
+        <xs:attribute name="changeType" type="tns:changeType"/>
+    </xs:complexType>
+
+    <xs:complexType name="postHoldingXmlNode">
+        <xs:sequence>
+            <xs:element name="employeePostHolding" type="tns:employeePostHolding"/>
+            <xs:element minOccurs="0" name="jobOffer" nillable="true" type="tns:jobOffer"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="employeePostHolding">
+        <xs:sequence>
+            <xs:element name="employeeNumber" nillable="true" type="xs:string"/>
+            <xs:element name="endDate" nillable="true" type="xs:dateTime"/>
+            <xs:element name="joinReason" nillable="true" type="xs:string"/>
+            <xs:element name="leaveReason" nillable="true" type="xs:string"/>
+            <xs:element name="mainFlag" nillable="true" type="xs:string"/>
+            <xs:element name="occupancyType" nillable="true" type="xs:string"/>
+            <xs:element name="positionStatus" nillable="true" type="xs:string"/>
+            <xs:element name="post" nillable="true" type="tns:post"/>
+            <xs:element name="postNumber" nillable="true" type="xs:string"/>
+            <xs:element name="startDate" nillable="true" type="xs:dateTime"/>
+            <xs:element name="suspendedFlag" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="post">
+        <xs:sequence>
+            <xs:element name="classification" nillable="true" type="xs:string"/>
+            <xs:element name="creationDate" nillable="true" type="xs:dateTime"/>
+            <xs:element name="freezeEndDate" nillable="true" type="xs:dateTime"/>
+            <xs:element name="freezeRecruitmentFlag" nillable="true" type="xs:string"/>
+            <xs:element name="freezeStartDate" nillable="true" type="xs:dateTime"/>
+            <xs:element name="hoursOverride" nillable="true" type="xs:string"/>
+            <xs:element name="longDescription" nillable="true" type="xs:string"/>
+            <xs:element name="mpwCodeId" nillable="true" type="xs:string"/>
+            <xs:element name="mpwManualFlag" nillable="true" type="xs:string"/>
+            <xs:element name="obsoleteDate" nillable="true" type="xs:dateTime"/>
+            <xs:element name="polRestrictFlag" nillable="true" type="xs:string"/>
+            <xs:element name="postNumber" nillable="true" type="xs:string"/>
+            <xs:element name="shortDescription" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="jobOffer">
+        <xs:sequence>
+            <xs:element name="applicantId" type="xs:string"/>
+            <xs:element name="confirmedStartDate" type="xs:dateTime"/>
+            <xs:element name="vacancyId" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="changeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="START"/>
+            <xs:enumeration value="END"/>
+            <xs:enumeration value="CHANGE"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+</xs:schema>
